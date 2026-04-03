@@ -505,6 +505,43 @@
   font-weight: bold;
   pointer-events: none;
 }
+    .contact-combined {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-left {
+  flex: 1;
+}
+
+.small-map {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.small-map iframe {
+  width: 100%;
+  height: 140px;
+  border: none;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .contact-combined {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .small-map {
+    width: 100%;
+  }
+
+  .small-map iframe {
+    height: 160px;
+  }
+}
 
 .gallery-hidden {
   display: none !important;
@@ -1183,22 +1220,25 @@
           <a href="https://wa.me/381652425262?text=Zdravo%2C%20želim%20da%20zakažem%20trening" target="_blank" class="btn btn-primary">Pošalji upit</a>
         </div>
 
-        <div class="contact-layout">
-          <div class="contact-box">
-            <p><strong>Telefon:</strong> <a href="tel:+381652425262">+381 65 2425 262</a></p>
-            <p><strong>Instagram:</strong> <a href="https://instagram.com/reljatennis" target="_blank">@reljatennis</a></p>
-            <p><strong>Lokacija:</strong> Novi Sad, Srbija</p>
-            <p><strong>Email:</strong> <a href="mailto:reljacakan4@gmail.com">reljacakan4@gmail.com</a></p>
-          </div>
+       <div class="contact-box contact-combined">
 
-      
- <div class="map-box small-map">
-  <iframe
-    src="https://www.google.com/maps?q=Novi+Sad&output=embed"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+  <div class="contact-left">
+    <p><strong>Telefon:</strong> <a href="tel:+381652425262">+381 65 2425 262</a></p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/reljatennis" target="_blank">@reljatennis</a></p>
+    <p><strong>Lokacija:</strong> Novi Sad, Srbija</p>
+    <p><strong>Email:</strong> <a href="mailto:reljacakan4@gmail.com">reljacakan4@gmail.com</a></p>
+  </div>
+
+  <div class="small-map">
+    <iframe
+      src="https://www.google.com/maps?q=Novi+Sad&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+
 </div>
+
+    
 </div>
         </div>
       </div>
