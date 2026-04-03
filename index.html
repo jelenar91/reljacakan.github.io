@@ -449,27 +449,45 @@
       margin-top: 12px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
+  .gallery-compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
 
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      transition: all 0.4s ease;
-      cursor: pointer;
-    }
+.gallery-compact img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+}
 
-    .gallery img:hover {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
+.gallery-compact img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+@media (max-width: 900px) {
+  .gallery-compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-compact img {
+    height: 170px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-compact img {
+    height: 130px;
+  }
+}
 
     .contact-cta {
       text-align: center;
@@ -556,9 +574,9 @@
     .contact-box,
     .contact-cta,
     .map-box,
-    .gallery img {
-      animation: fadeUp 0.9s ease both;
-    }
+  .gallery-compact img {
+  animation: fadeUp 0.9s ease both;
+}
 
     .card:nth-child(1) { animation-delay: 0.1s; }
     .card:nth-child(2) { animation-delay: 0.2s; }
@@ -594,10 +612,6 @@
       .cards,
       .contact-layout {
         grid-template-columns: 1fr;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr 1fr;
       }
 
       .hero {
@@ -653,14 +667,6 @@
         left: 14px;
         right: 14px;
         bottom: 14px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery img {
-        min-height: 240px;
       }
 
       .close {
@@ -811,48 +817,6 @@
   }
 }
 
-    .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 170px;
-  gap: 12px;
-}
-
-.gallery-item {
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.4s;
-}
-
-.gallery-item img:hover {
-  transform: scale(1.05);
-}
-
-.gallery-item.large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.gallery-item.wide {
-  grid-column: span 2;
-}
-
-.gallery-item.tall {
-  grid-row: span 2;
-}
-
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 130px;
-  }
-}
     
   </style>
 </head>
@@ -975,47 +939,23 @@
       </div>
     </section>
 
-    <section id="gallery">
-      <div class="container">
-        <h2 class="section-title">Galerija</h2>
-        <p class="section-subtitle">
-          Atmosfera sa treninga i rada na terenu.
-        </p>
+<section id="gallery">
+  <div class="container">
+    <h2 class="section-title">Galerija</h2>
+    <p class="section-subtitle">
+      Atmosfera sa treninga i rada na terenu.
+    </p>
 
-        <styyle>
-  <div class="gallery-item large">
-    <img src="images/tenis-trening-novi-sad-djokovic.jpg">
+    <div class="gallery-compact">
+      <img src="images/tenis-trening-novi-sad-djokovic.jpg" alt="Relja Čakan i Novak Đoković na teniskom terenu u Novom Sadu">
+      <img src="images/tenis-trening-novi-sad-2.jpg" alt="Teniski trener na terenu u Novom Sadu">
+      <img src="images/tenis-trener-novi-sad-6.jpg" alt="Rad sa igračima tenisa u Novom Sadu">
+      <img src="images/tenis-trener-novi-sad-7.jpg" alt="Teniski teren i trening u Novom Sadu">
+      <img src="images/tenis-trener-novi-sad-3.jpg" alt="Individualni tenis trening u Novom Sadu">
+      <img src="images/tenis-deca-trening-novi-sad.jpg" alt="Tenis za decu u Novom Sadu">
+    </div>
   </div>
-
-  <div class="gallery-item">
-    <img src="images/tenis-trening-novi-sad-2.jpg">
-  </div>
-
-  <div class="gallery-item tall">
-    <img src="images/tenis-trener-novi-sad-6.jpg">
-  </div>
-
-  <div class="gallery-item">
-    <img src="images/tenis-trener-novi-sad-7.jpg">
-  </div>
-
-  <div class="gallery-item wide">
-    <img src="images/tenis-trener-novi-sad-3.jpg">
-  </div>
-
-  <div class="gallery-item">
-    <img src="images/tenis-deca-trening-novi-sad.jpg">
-  </div>
-
-  <div class="gallery-item">
-    <img src="images/tenis.jpg">
-  </div>
-
-  <div class="gallery-item wide">
-    <img src="images/tenis-trener-novi-sad-5.jpg">
-  </div>
-</div>
-    </section>
+</section>
 
     <section id="contact">
       <div class="container">
