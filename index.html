@@ -449,44 +449,72 @@
       margin-top: 12px;
     }
 
-  .gallery-compact {
+.gallery-compact {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   margin-top: 26px;
 }
 
-.gallery-compact img {
+.gallery-compact img,
+.gallery-more {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 160px;
   border-radius: 20px;
+}
+
+.gallery-compact img {
+  object-fit: cover;
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.28);
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  display: block;
+  transition: 0.3s;
 }
 
 .gallery-compact img:hover {
   transform: scale(1.02);
-  filter: brightness(1.05);
+}
+
+.gallery-more {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-more img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-more::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.gallery-more span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.gallery-hidden {
+  display: none;
 }
 
 @media (max-width: 900px) {
   .gallery-compact {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .gallery-compact img {
-    height: 170px;
-  }
 }
 
-@media (max-width: 640px) {
-  .gallery-compact img {
-    height: 130px;
-  }
+
 }
 
     .contact-cta {
@@ -946,14 +974,22 @@
       Atmosfera sa treninga i rada na terenu.
     </p>
 
-    <div class="gallery-compact">
-      <img src="images/tenis-trening-novi-sad-djokovic.jpg" alt="Relja Čakan i Novak Đoković na teniskom terenu u Novom Sadu">
-      <img src="images/tenis-trening-novi-sad-2.jpg" alt="Teniski trener na terenu u Novom Sadu">
-      <img src="images/tenis-trener-novi-sad-6.jpg" alt="Rad sa igračima tenisa u Novom Sadu">
-      <img src="images/tenis-trener-novi-sad-7.jpg" alt="Teniski teren i trening u Novom Sadu">
-      <img src="images/tenis-trener-novi-sad-3.jpg" alt="Individualni tenis trening u Novom Sadu">
-      <img src="images/tenis-deca-trening-novi-sad.jpg" alt="Tenis za decu u Novom Sadu">
-    </div>
+  <div class="gallery-compact">
+  <img src="images/tenis-trening-novi-sad-djokovic.jpg">
+  <img src="images/tenis-trening-novi-sad-2.jpg">
+  <img src="images/tenis-trener-novi-sad-6.jpg">
+
+  <div class="gallery-more" onclick="openGalleryFromHidden()">
+    <img src="images/tenis-trener-novi-sad-7.jpg">
+    <span>Pogledaj galeriju</span>
+  </div>
+
+  <!-- skrivene slike -->
+  <img class="gallery-hidden" src="images/tenis-trener-novi-sad-3.jpg">
+  <img class="gallery-hidden" src="images/tenis-deca-trening-novi-sad.jpg">
+  <img class="gallery-hidden" src="images/tenis.jpg">
+  <img class="gallery-hidden" src="images/tenis-trener-novi-sad-5.jpg">
+</div>
   </div>
 </section>
 
@@ -1002,7 +1038,7 @@
   </div>
 
  <script>
-  const galleryImages = document.querySelectorAll(".gallery img");
+ const galleryImages = document.querySelectorAll(".gallery-compact img, .gallery img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const closeBtn = document.querySelector(".close");
@@ -1066,6 +1102,34 @@
       }
     });
   }
+
+const galleryImages = document.querySelectorAll(".gallery-compact img, .gallery-hidden");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+galleryImages.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+    document.body.style.overflow = "hidden";
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+  document.body.style.overflow = "auto";
+});
+
+function openGalleryFromHidden() {
+  const firstHidden = document.querySelector(".gallery-hidden");
+  if (firstHidden) {
+    lightbox.style.display = "flex";
+    lightboxImg.src = firstHidden.src;
+    document.body.style.overflow = "hidden";
+  }
+}
+
 </script>
 </body>
 </html>
