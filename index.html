@@ -1111,16 +1111,16 @@
 
 <div class="gallery-compact">
   <img src="images/tenis-trening-novi-sad-djokovic.jpg" alt="Relja Čakan i Novak Đoković">
-  <img src="images/tenis-trening-novi-sad-2.jpg" alt="Teniski trener na terenu">
+  <img src="images/images/tenis-deca-trening-novi-sad.jpg" alt="Teniski trener na terenu">
   <img src="images/tenis-trener-novi-sad-6.jpg" alt="Rad sa igračima tenisa">
 
   <div class="gallery-more">
     <img src="images/tenis-trener-novi-sad-7.jpg" alt="Pogledaj galeriju">
     <span>Pogledaj galeriju</span>
   </div>
-
+  <img class="gallery-hidden" src="images/tenis-trener-novi-sad-7.jpg" alt="Individualni tenis trening">
   <img class="gallery-hidden" src="images/tenis-trener-novi-sad-3.jpg" alt="Individualni tenis trening">
-  <img class="gallery-hidden" src="images/tenis-deca-trening-novi-sad.jpg" alt="Tenis za decu">
+  <img class="gallery-hidden" src="images/tenis-trening-novi-sad-2.jpg" alt="Tenis za decu">
   <img class="gallery-hidden" src="images/tenis.jpg" alt="Teniski trener Relja Čakan">
   <img class="gallery-hidden" src="images/tenis-trener-novi-sad-5.jpg" alt="Teniski trening na terenu">
 </div>
@@ -1221,14 +1221,15 @@
     }
   });
 
-  if (openGalleryBtn) {
-    openGalleryBtn.addEventListener("click", () => {
-      const firstHiddenIndex = galleryImages.findIndex(img =>
-        img.classList.contains("gallery-hidden")
-      );
-      openLightbox(firstHiddenIndex !== -1 ? firstHiddenIndex : 0);
-    });
-  }
+if (openGalleryBtn) {
+  openGalleryBtn.addEventListener("click", () => {
+    const previewImg = openGalleryBtn.querySelector("img");
+    const previewIndex = galleryImages.findIndex(
+      img => img.src === previewImg.src
+    );
+    openLightbox(previewIndex !== -1 ? previewIndex : 0);
+  });
+}
 
   function closeLightbox() {
     lightbox.style.display = "none";
