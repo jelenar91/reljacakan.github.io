@@ -956,6 +956,49 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   }
 }
+    .map-card {
+  min-height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background:
+    linear-gradient(rgba(7,11,20,0.25), rgba(7,11,20,0.45)),
+    url("images/map-preview.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.map-overlay {
+  width: 100%;
+  background: rgba(7,11,20,0.62);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  padding: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.map-overlay h3 {
+  margin: 0 0 6px;
+  font-size: 1.4rem;
+}
+
+.map-overlay p {
+  margin: 0 0 14px;
+  color: rgba(255,255,255,0.78);
+}
+
+.map-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  background: linear-gradient(135deg, #39d27a, #1faa59);
+}
     
   </style>
 </head>
@@ -1128,13 +1171,13 @@
             <p><strong>Email:</strong> <a href="mailto:reljacakan4@gmail.com">reljacakan4@gmail.com</a></p>
           </div>
 
-          <div class="map-box">
-            <iframe
-              src="https://www.google.com/maps?q=Novi+Sad&output=embed"
-              loading="lazy"
-              allowfullscreen="">
-            </iframe>
-          </div>
+        <div class="map-box map-card">
+  <div class="map-overlay">
+    <h3>Novi Sad</h3>
+    <p>Srbija</p>
+    <a class="map-open-btn" href="https://www.google.com/maps?q=Novi+Sad" target="_blank">Otvori mapu</a>
+  </div>
+</div>
         </div>
       </div>
     </section>
