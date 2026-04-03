@@ -810,6 +810,50 @@
     min-height: 320px !important;
   }
 }
+
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 170px;
+  gap: 12px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 130px;
+  }
+}
+    
   </style>
 </head>
 <body>
@@ -938,18 +982,39 @@
           Atmosfera sa treninga i rada na terenu.
         </p>
 
-        <div class="gallery">
-          <img src="images/tenis-trening-novi-sad-djokovic.jpg" alt="Relja Čakan i Novak Đoković na teniskom terenu u Novom Sadu">
-          <img src="images/tenis-trening-novi-sad-2.jpg" alt="Teniski trener na terenu u Novom Sadu">
-          <img src="images/tenis-trener-novi-sad-6.jpg" alt="Rad sa igračima tenisa u Novom Sadu">
-          <img src="images/tenis-trener-novi-sad-7.jpg" alt="Teniski teren i trening u Novom Sadu">
-          <img src="images/tenis-trener-novi-sad-3.jpg" alt="Individualni tenis trening u Novom Sadu">
-          <img src="images/tenis-deca-trening-novi-sad.jpg" alt="Tenis za decu u Novom Sadu">
-          <img src="images/tenis.jpg" alt="Teniski trener Relja Čakan na terenu">
-          <img src="images/tenis-trener-novi-sad-4.jpg" alt="Tenis trener u Novom Sadu">
-          <img src="images/tenis-trener-novi-sad-5.jpg" alt="Teniski trening na terenu">
-        </div>
-      </div>
+        <styyle>
+  <div class="gallery-item large">
+    <img src="images/tenis-trening-novi-sad-djokovic.jpg">
+  </div>
+
+  <div class="gallery-item">
+    <img src="images/tenis-trening-novi-sad-2.jpg">
+  </div>
+
+  <div class="gallery-item tall">
+    <img src="images/tenis-trener-novi-sad-6.jpg">
+  </div>
+
+  <div class="gallery-item">
+    <img src="images/tenis-trener-novi-sad-7.jpg">
+  </div>
+
+  <div class="gallery-item wide">
+    <img src="images/tenis-trener-novi-sad-3.jpg">
+  </div>
+
+  <div class="gallery-item">
+    <img src="images/tenis-deca-trening-novi-sad.jpg">
+  </div>
+
+  <div class="gallery-item">
+    <img src="images/tenis.jpg">
+  </div>
+
+  <div class="gallery-item wide">
+    <img src="images/tenis-trener-novi-sad-5.jpg">
+  </div>
+</div>
     </section>
 
     <section id="contact">
