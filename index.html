@@ -546,12 +546,24 @@
   backdrop-filter: blur(12px);
   box-shadow: 0 18px 44px rgba(0,0,0,0.24);
 }
+
+    .contact-combined {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px; /* SMANJI RAZMAK */
+}
+    .contact-left {
+  flex: 1;
+  max-width: 60%;
+}
+    .small-map {
+  max-width: 35%;
+}  
     .contact-box:hover {
   transform: translateY(-4px);
   box-shadow: 0 28px 60px rgba(0,0,0,0.35);
 }
-
-
     .contact-box p {
       margin-bottom: 12px;
       font-size: 1.06rem;
@@ -561,15 +573,9 @@
       color: #d8ffe8;
       text-decoration: none;
     }
-
     .contact-box a:hover {
       text-decoration: underline;
     }
-
-.contact-left {
-  flex: 1;
-}
-
 .contact-left p {
   margin-bottom: 10px;
 }
