@@ -507,7 +507,46 @@
 }
 
 .gallery-hidden {
-  display: none;
+  display: none !important;
+}
+
+    .gallery-hidden {
+  display: none !important;
+}
+
+/* 👉 OVO DODAJ ISPOD */
+.gallery-more {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.gallery-more img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  transition: 0.4s ease;
+}
+
+.gallery-more:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.4);
+}
+
+.gallery-more span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  pointer-events: none;
 }
 
 @media (max-width: 900px) {
@@ -516,8 +555,13 @@
   }
 }
 
-
+@media (min-width: 1200px) {
+  .gallery-compact img,
+  .gallery-more {
+    height: 240px;
+  }
 }
+
 
     .contact-cta {
       text-align: center;
@@ -981,26 +1025,23 @@
       Atmosfera sa treninga i rada na terenu.
     </p>
 
-  <div class="gallery-compact">
-  <img src="images/tenis-trening-novi-sad-djokovic.jpg">
-  <img src="images/tenis-trening-novi-sad-2.jpg">
-  <img src="images/tenis-trener-novi-sad-6.jpg">
+<div class="gallery-compact">
+  <img src="images/tenis-trening-novi-sad-djokovic.jpg" alt="Relja Čakan i Novak Đoković">
+  <img src="images/tenis-trening-novi-sad-2.jpg" alt="Teniski trener na terenu">
+  <img src="images/tenis-trener-novi-sad-6.jpg" alt="Rad sa igračima tenisa">
 
-  <div class="gallery-more" onclick="openGalleryFromHidden()">
-    <img src="images/tenis-trener-novi-sad-7.jpg">
+  <div class="gallery-more" id="openGalleryBtn">
+    <img src="images/tenis-trener-novi-sad-7.jpg" alt="Pogledaj galeriju">
     <span>Pogledaj galeriju</span>
   </div>
 
-  <!-- skrivene slike -->
-  <img class="gallery-hidden" src="images/tenis-trener-novi-sad-3.jpg">
-  <img class="gallery-hidden" src="images/tenis-deca-trening-novi-sad.jpg">
-  <img class="gallery-hidden" src="images/tenis.jpg">
-  <img class="gallery-hidden" src="images/tenis-trener-novi-sad-5.jpg">
-
-    <div class="gallery-more" onclick="openGalleryFromHidden()">
-  <img src="images/tenis-trener-novi-sad-7.jpg">
-  <span>Pogledaj galeriju</span>
+  <img class="gallery-hidden" src="images/tenis-trener-novi-sad-3.jpg" alt="Individualni tenis trening">
+  <img class="gallery-hidden" src="images/tenis-deca-trening-novi-sad.jpg" alt="Tenis za decu">
+  <img class="gallery-hidden" src="images/tenis.jpg" alt="Teniski trener Relja Čakan">
+  <img class="gallery-hidden" src="images/tenis-trener-novi-sad-5.jpg" alt="Teniski trening na terenu">
 </div>
+
+
     
 </div>
   </div>
@@ -1050,11 +1091,12 @@
     <img id="lightbox-img" src="" alt="Uvećana fotografija sa treninga">
   </div>
 
- <script>
-const galleryImages = document.querySelectorAll(".gallery-compact img");
+<script>
+  const galleryImages = document.querySelectorAll(".gallery-compact img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const closeBtn = document.querySelector(".close");
+  const openGalleryBtn = document.querySelector(".gallery-more");
 
   galleryImages.forEach((img) => {
     img.addEventListener("click", () => {
@@ -1065,18 +1107,34 @@ const galleryImages = document.querySelectorAll(".gallery-compact img");
     });
   });
 
+  if (openGalleryBtn) {
+    openGalleryBtn.addEventListener("click", () => {
+      const firstHidden = document.querySelector(".gallery-hidden");
+      if (firstHidden) {
+        lightbox.style.display = "flex";
+        lightboxImg.src = firstHidden.src;
+        lightboxImg.alt = firstHidden.alt;
+        document.body.style.overflow = "hidden";
+      }
+    });
+  }
+
   function closeLightbox() {
     lightbox.style.display = "none";
     document.body.style.overflow = "auto";
   }
 
-  closeBtn.addEventListener("click", closeLightbox);
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
 
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox || e.target === closeBtn) {
-      closeLightbox();
-    }
-  });
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === closeBtn) {
+        closeLightbox();
+      }
+    });
+  }
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
@@ -1115,34 +1173,6 @@ const galleryImages = document.querySelectorAll(".gallery-compact img");
       }
     });
   }
-
-const galleryImages = document.querySelectorAll(".gallery-compact img, .gallery-hidden");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".close");
-
-galleryImages.forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-    document.body.style.overflow = "hidden";
-  });
-});
-
-closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
-  document.body.style.overflow = "auto";
-});
-
-function openGalleryFromHidden() {
-  const firstHidden = document.querySelector(".gallery-hidden");
-  if (firstHidden) {
-    lightbox.style.display = "flex";
-    lightboxImg.src = firstHidden.src;
-    document.body.style.overflow = "hidden";
-  }
-}
-
 </script>
 </body>
 </html>
