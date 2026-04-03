@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenis trener Novi Sad | Relja Čakan</title>
+
+  <meta name="description" content="Profesionalni tenis trener u Novom Sadu. Individualni i grupni treninzi za decu i odrasle. Poboljšaj tehniku, kondiciju i igru uz stručan rad.">
+  <meta name="keywords" content="tenis trener Novi Sad, tenis treninzi Novi Sad, privatni trener tenis, škola tenisa Novi Sad, tenis za decu">
+  <meta name="author" content="Relja Čakan">
+
+  <meta property="og:title" content="Tenis trener Novi Sad | Relja Čakan">
+  <meta property="og:description" content="Individualni i grupni treninzi tenisa u Novom Sadu.">
+  <meta property="og:image" content="images/tenis.jpg">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Relja Čakan - Tenis trener",
+    "description": "Profesionalni tenis trener u Novom Sadu. Individualni i grupni treninzi za decu i odrasle.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Novi Sad",
+      "addressCountry": "RS"
+    },
+    "telephone": "+381652425262",
+    "email": "reljacakan4@gmail.com",
+    "areaServed": "Novi Sad",
+    "sameAs": [
+      "https://instagram.com/reljatennis"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --card: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.14);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.74);
+      --green: #39d27a;
+      --green-dark: #1faa59;
+      --shadow: 0 24px 60px rgba(0,0,0,0.38);
+      --radius: 28px;
+      --radius-lg: 36px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(57,210,122,0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(61,220,132,0.10), transparent 24%),
+        linear-gradient(rgba(7, 11, 20, 0.80), rgba(7, 11, 20, 0.88)),
+        url("images/tennis-bg.jpg") center/cover no-repeat fixed;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 12, 21, 0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.08rem;
+      font-weight: 900;
+      letter-spacing: 1.6px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.25s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      padding: 20px 0 52px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .hero-text-wrap {
+      align-self: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-weight: 800;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 0.96rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: var(--green);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -1.8px;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text {
+      font-size: 1.13rem;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 14px;
+    }
+
+    .location-badge {
+      display: inline-block;
+      margin: 10px 0 24px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(57,210,122,0.13);
+      border: 1px solid rgba(57,210,122,0.28);
+      color: #d9ffe8;
+      font-weight: 800;
+    }
+
+    .buttons,
+    .contact-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    .btn,
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: 0.25s ease;
+      font-weight: 800;
+      border-radius: 999px;
+    }
+
+    .btn {
+      padding: 15px 28px;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover,
+    .contact-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(31,170,89,0.30);
+    }
+
+    .btn-primary::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      transition: left 0.7s ease;
+    }
+
+    .btn-primary:hover::after {
+      left: 140%;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-btn {
+      padding: 11px 18px;
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 650px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      isolation: isolate;
+      animation-delay: 0.15s;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(7,11,20,0.18), rgba(7,11,20,0.02)),
+        radial-gradient(circle at top right, rgba(57,210,122,0.16), transparent 30%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: contrast(1.05) saturate(1.04) brightness(0.95);
+      transform: scale(1.02);
+      transition: transform 0.5s ease;
+    }
+
+    .hero-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      z-index: 2;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: rgba(7,11,20,0.68);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+    }
+
+    .hero-card-badge strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-card-badge span {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.74);
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    #services {
+      padding-top: 46px;
+    }
+
+    #about,
+    #gallery {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+
+    #contact {
+      padding-top: 32px;
+      padding-bottom: 56px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.72);
+      max-width: 780px;
+      margin: 0 auto 34px;
+      font-size: 1.08rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card,
+    .about-box,
+    .contact-box,
+    .contact-cta,
+    .map-box {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.24);
+    }
+
+    .card {
+      position: relative;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(57,210,122,0.35), rgba(255,255,255,0.03));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(57,210,122,0.28);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.28);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h3,
+    .about-box h2,
+    .contact-box h2,
+    .contact-cta h3 {
+      font-size: 1.56rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+    }
+
+    .card p,
+    .about-box p,
+    .contact-box p,
+    .contact-cta p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.03rem;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-box p + p {
+      margin-top: 14px;
+    }
+
+    .why-list p {
+      margin-top: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .contact-cta {
+      text-align: center;
+      margin: 0 auto 18px;
+      max-width: 860px;
+      background: linear-gradient(135deg, rgba(57,210,122,0.16), rgba(255,255,255,0.05));
+      border: 1px solid rgba(57,210,122,0.24);
+    }
+
+    .contact-cta p {
+      margin-bottom: 18px;
+      color: rgba(255,255,255,0.86);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-box,
+    .map-box {
+      height: 100%;
+    }
+
+    .contact-box p {
+      margin-bottom: 12px;
+      font-size: 1.06rem;
+    }
+
+    .contact-box a {
+      color: #d8ffe8;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: 0;
+      border-radius: 20px;
+      display: block;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 30px;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 92%;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .close {
+      position: absolute;
+      top: 24px;
+      right: 34px;
+      font-size: 44px;
+      color: white;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .hero-text-wrap,
+    .hero-card,
+    .card,
+    .about-box,
+    .contact-box,
+    .contact-cta,
+    .map-box,
+    .gallery img {
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      padding: 18px 0 34px;
+      text-align: center;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-card {
+        min-height: 560px;
+      }
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .about,
+      .cards,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero-card {
+        min-height: 440px;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      #contact {
+        padding-top: 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo {
+        white-space: normal;
+        line-height: 1.3;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .buttons,
+      .contact-buttons {
+        flex-direction: column;
+      }
+
+      .btn,
+      .contact-btn {
+        width: 100%;
+      }
+
+      .hero-card {
+        min-height: 360px;
+      }
+
+      .hero-card-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        min-height: 240px;
+      }
+
+      .close {
+        top: 16px;
+        right: 20px;
+        font-size: 38px;
+      }
+
+      .contact-cta,
+      .contact-box,
+      .map-box {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">PROFESIONALNI TENIS TRENER</div>
+      <ul class="nav-links">
+        <li><a href="#home">Početna</a></li>
+        <li><a href="#services">Treninzi</a></li>
+        <li><a href="#about">O meni</a></li>
+        <li><a href="#gallery">Galerija</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text-wrap">
+          <div class="eyebrow">Professional Tennis Coaching</div>
+          <h1>Individualni i grupni treninzi tenisa za decu i odrasle</h1>
+
+          <p class="hero-text">
+            Profesionalni tenis trener u Novom Sadu — individualni i grupni treninzi sa fokusom na rezultat, tehniku i sigurnost u igri.
+          </p>
+
+          <div class="location-badge">📍 Novi Sad</div>
+
+          <p class="hero-text">
+            Podignite svoj nivo igre uz profesionalno vođene treninge i individualan pristup svakom igraču. Kroz precizno usavršavanje tehnike, kretanja i taktike, svaki trening ima jasan cilj i strukturu.
+          </p>
+
+          <p class="hero-text">
+            Bez obzira da li ste početnik, rekreativac ili napredan igrač, trening je u potpunosti prilagođen vašem nivou i ciljevima, uz fokus na kontinuiran napredak, sigurnost u igri i stvarne rezultate na terenu.
+          </p>
+
+          <div class="buttons">
+            <a href="#contact" class="btn btn-primary">Zakaži trening</a>
+            <a href="#services" class="btn btn-secondary">Pogledaj ponudu</a>
+          </div>
+
+          <div class="contact-buttons">
+            <a href="tel:+381652425262" class="contact-btn">📞 Pozovi</a>
+            <a href="https://wa.me/381652425262?text=Zdravo%2C%20želim%20da%20zakažem%20trening" target="_blank" class="contact-btn">💬 WhatsApp</a>
+            <a href="viber://chat?number=%2B381652425262" class="contact-btn">💜 Viber</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="images/tenis.jpg" alt="Teniski trener Relja Čakan na terenu u Novom Sadu">
+          <div class="hero-card-badge">
+            <strong>Premium 1 na 1 pristup</strong>
+            <span>Tehnika • taktika • kretanje • sigurnost u igri</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Vrste treninga</h2>
+        <p class="section-subtitle">
+          Programi prilagođeni deci, odraslima, rekreativcima i igračima koji žele ozbiljan napredak uz moderan i profesionalan pristup radu.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Individualni treninzi</h3>
+            <p>
+              Individualni treninzi 1 na 1, potpuno prilagođeni nivou i ciljevima igrača – kako za početnike i rekreativce, tako i za napredne igrače. Fokus na razvoju tehnike, kretanja i taktike igre, uz kontinuirano praćenje napretka.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Treninzi za decu</h3>
+            <p>
+              Stručno vođeni treninzi za decu svih uzrasta, uz individualan pristup i fokus na pravilan razvoj tehnike i motorike. Kroz zabavan i postepen rad, deca razvijaju samopouzdanje, disciplinu i ljubav prema tenisu.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Grupni treninzi</h3>
+            <p>
+              Rad u manjim grupama sa fokusom na tehniku, igru i takmičarski duh. Dinamični treninzi koji podižu motivaciju, razvijaju sigurnost na terenu i ubrzavaju napredak.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about">
+        <div class="about-box">
+          <h2>O meni</h2>
+          <p>
+            Ja sam profesionalni teniski trener sa iskustvom u radu od 1999. godine i bivši takmičar. Tokom takmičarske karijere osvajao sam titule i bio prvak u pionirskoj, juniorskoj i seniorskoj konkurenciji, što mi je omogućilo da razvijem duboko razumevanje igre na visokom nivou.
+          </p>
+          <p>
+            Tokom karijere imao sam priliku da radim kao sparing partner sa profesionalnim igračima, uključujući Andreu Petković, kao i našeg reprezentativca Lasla Đerea, što mi danas omogućava da znanje i iskustvo prenesem na svoje klijente kroz kvalitetan i strukturisan rad na visokom nivou.
+          </p>
+        </div>
+
+        <div class="about-box why-list">
+          <h2>Zašto izabrati moj trening</h2>
+          <p>• Individualan pristup svakom igraču</p>
+          <p>• Jasna struktura i cilj svakog treninga</p>
+          <p>• Rad sa decom, odraslima i rekreativcima</p>
+          <p>• Fokus na tehnici, samopouzdanju i napretku</p>
+          <p>• Profesionalan, moderan i premium pristup radu</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-title">Galerija</h2>
+        <p class="section-subtitle">
+          Atmosfera sa treninga i rada na terenu.
+        </p>
+
+        <div class="gallery">
+          <img src="images/tenis-trening-novi-sad-djokovic.jpg" alt="Relja Čakan i Novak Đoković na teniskom terenu u Novom Sadu">
+          <img src="images/tenis-trening-novi-sad-2.jpg" alt="Teniski trener na terenu u Novom Sadu">
+          <img src="images/tenis-trener-novi-sad-6.jpg" alt="Rad sa igračima tenisa u Novom Sadu">
+          <img src="images/tenis-trener-novi-sad-7.jpg" alt="Teniski teren i trening u Novom Sadu">
+          <img src="images/tenis-trener-novi-sad-3.jpg" alt="Individualni tenis trening u Novom Sadu">
+          <img src="images/tenis-deca-trening-novi-sad.jpg" alt="Tenis za decu u Novom Sadu">
+          <img src="images/tenis.JPG" alt="Teniski trener Relja Čakan na terenu">
+          <img src="images/tenis-trener-novi-sad-4.jpg" alt="Tenis trener u Novom Sadu">
+          <img src="images/tenis-trener-novi-sad-5.jpg" alt="Teniski trening na terenu">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Kontakt</h2>
+        <p class="section-subtitle">
+          Za individualne i grupne treninge, probni termin ili dodatne informacije, kontaktirajte me direktno.
+        </p>
+
+        <div class="contact-cta">
+          <h3>Spremni za napredak?</h3>
+          <p>Zakažite svoj prvi trening i napravite sledeći korak ka sigurnijoj, jačoj i boljoj igri na terenu.</p>
+          <a href="https://wa.me/381652425262?text=Zdravo%2C%20želim%20da%20zakažem%20trening" target="_blank" class="btn btn-primary">Pošalji upit</a>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-box">
+            <p><strong>Telefon:</strong> <a href="tel:+381652425262">+381 65 2425 262</a></p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/reljatennis" target="_blank">@reljatennis</a></p>
+            <p><strong>Lokacija:</strong> Novi Sad, Srbija</p>
+            <p><strong>Email:</strong> <a href="mailto:reljacakan4@gmail.com">reljacakan4@gmail.com</a></p>
+          </div>
+
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps?q=Novi+Sad&output=embed"
+              loading="lazy"
+              allowfullscreen="">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Profesionalni tenis trener. Sva prava zadržana.
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Uvećana fotografija sa treninga">
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll(".gallery img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+
+    galleryImages.forEach((img) => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    closeBtn.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === closeBtn) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
